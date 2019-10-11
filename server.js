@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var path = require('path');
 
 // create express app
 const app = express();
@@ -29,6 +30,7 @@ mongoose.connect(dbConfig.url, {
 // define a simple route
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.sendFile(path.join(__dirname,'pages','index.html'));
 });
 
 require('./app/routes/note.routes.js')(app);
