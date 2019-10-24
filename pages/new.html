@@ -1,18 +1,21 @@
 <html>
     <title>Note2Note</title>
-<h2>Note App</h2>
+<h2>Enter your note</h2>
 <head>
         <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+        <button onclick="window.location.href='/'" class="btn btn-lg btn-primary btn-block">Home</button>
+</br>
+        <form action="/notes" method="post">
+            <input type="text" name="fname" placeholder="Title" /><br />
+            <textarea name="content" placeholder="Enter your content here"></textarea>
+            </br>
+            <button>Save</button>
+        </form>
 
-    <div id="menu">
-            <button onclick="window.location.href='/new'" class="btn btn-lg btn-primary btn-block">New Note</button>
-            <button onclick="window.location.href='/read'" class="btn btn-lg btn-primary btn-block">Read a Note</button>
-            <button onclick="window.location.href='/readall'" class="btn btn-lg btn-primary btn-block">Read all Notes</button>
-    </div>
 </body>
 
 
