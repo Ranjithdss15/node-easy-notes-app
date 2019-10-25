@@ -1,12 +1,15 @@
 module.exports = (app) => {
     const notes = require('../controllers/note.controller.js');
 
-    // Create a new Note
-    app.post('/notes', notes.create(newnote{
+    /*/ Create a new Note
+    app.post('/notes', notes.create('notes',{
         successRedirect : '/', 
         failureRedirect : '/new', 
         failureFlash : true
     }));
+*/
+    app.post('/notes', notes.create);
+
 
     // Retrieve all Notes
     app.get('/notes', notes.findAll);

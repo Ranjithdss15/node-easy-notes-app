@@ -6,7 +6,10 @@ exports.create = (req, res) => {
     if(!req.body.content) {
         return res.status(400).send({
             message: "Note content can not be empty"
-        });
+        })
+	}
+else {
+	return res.render('home');
     }
 
     // Create a Note
