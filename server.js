@@ -43,11 +43,16 @@ mongoose.connect(dbConfig.url, {
 app.get('/',(req,res,next) => {
     res.render('home');
 });
-
+app.get('/read',(req,res,next) => {
+    res.render('read');
+});
 
 app.get('/new',(req,res,next) => {
     res.render('new');
 });
+app.get('/main.js', function (req, res) {
+    res.sendFile(path.join(__dirname, 'pages', 'main.js'));
+    });
 
 
 
