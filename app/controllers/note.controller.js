@@ -33,8 +33,10 @@ else {
 exports.findAll = (req, res) => {
     Note.find()
     .then(notes => {
-        res.send(notes);
-    }).catch(err => {
+       // res.send(JSON.stringify(notes));
+var id = notes.params.id;
+   	res.send(JSON.stringify(id));
+}).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving notes."
         });
