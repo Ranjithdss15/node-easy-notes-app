@@ -8,9 +8,9 @@ exports.create = (req, res) => {
             message: "Note content can not be empty"
         })
 	}
-else {
-	return res.render('home');
-    }
+//else {
+//	return res.render('home');
+  //  }
 
     // Create a Note
     const note = new Note({
@@ -21,12 +21,14 @@ else {
     // Save Note in the database
     note.save()
     .then(data => {
-        res.send(data);
+       // res.send(data);
+        res.render('home');
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating the Note."
         });
     });
+  
 };
 
 // Retrieve and return all notes from the database.
